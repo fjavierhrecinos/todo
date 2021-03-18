@@ -1,0 +1,79 @@
+main {
+  padding: 2rem;
+}
+
+main .controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+main .container-list {
+  margin: 1rem 0rem;
+  padding: 5px;
+  border: 1px solid var(--gray);
+}
+
+main .list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+main .list .list-item {
+  border-bottom: 1px solid var(--gray);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 250ms linear;
+}
+
+main .list .list-item:hover {
+  background-color: var(--gray);
+}
+
+main .list .list-item:last-child {
+  border-bottom: 0px;
+}
+
+main .list .list-item .list-item--section:first-child {
+  flex-grow: 1;
+}
+
+main .list .list-item .list-title {
+  padding: 2px 4px;
+}
+
+main .list .list-item .list-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main .list.list-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 20px;
+}
+
+main .list.list-grid .list-item {
+  border-bottom: 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+main .list.list-grid .list-item .list-controls {
+  padding-top: 1rem;
+}
+
+main .add-item {
+  display: grid;
+  grid-template-columns: 1fr 65px;
+}
+
+main .add-item .add-item-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

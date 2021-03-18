@@ -1,0 +1,74 @@
+<main>
+  <h1 class="font--rb color--dark-gray size--40">My Todo</h1>
+  <div class="controls">
+    <div class="control">
+      <button type="button" class="btn btn-default display-block" (click)="filterByType('pending')">Pending</button>
+    </div>
+    <div class="control">
+      <button type="button" class="btn btn-default display-block" (click)="filterByType('all')">All</button>
+    </div>
+    <div class="control">
+      <button type="button" class="btn btn-default display-block" (click)="filterByType('completed')">Completed</button>
+    </div>
+  </div>
+
+  <form>
+    <div class="filters">
+      <div class="filter">
+        <div class="field-control field-control--inline">
+          <label for="">Show as grid:</label>
+          <div class="toggle">
+            <div class="toggle--btn"></div>
+          </div>
+        </div>
+      </div>
+      <div class="filter">
+        <div class="field-control field-control--icon field-control--inline">
+          <img class="icon icon--medium" src="../../../assets/icons/search.svg" alt="search">
+          <input type="text" placeholder="Filter" (keydown)="search($event)">
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="container-list">
+    <div class="list">
+
+      <div class="list-item" *ngFor="let item of data; let i = index">
+        <div class="list-item--section list-title">
+          <span class="font--rr color--blue size--16">{{item?.title}}</span>
+        </div>
+        <div class="list-item--section list-controls">
+          <button type="button" class="btn">
+            <img class="icon icon--small" src="../../../assets/icons/delete.svg" alt="delete" (click)="delete(i)">
+          </button>
+          <button type="button" class="btn" *ngIf="item.completed" (click)="uncomplete(i)">
+            <img class="icon icon--small" src="../../../assets/icons/checked.svg" alt="checked">
+          </button>
+          <button type="button" class="btn" *ngIf="!item.completed" (click)="complete(i)">
+            <img class="icon icon--small" src="../../../assets/icons/uncheck.svg" alt="unchecked">
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <form>
+    <div class="add-item">
+      <div class="add-item--description">
+        <div class="field-control">
+          <input class="display-block" type="text" placeholder="New item named">
+        </div>
+      </div>
+      <div class="add-item-action">
+        <button type="button" class="btn">
+          <img class="icon icon--medium" src="../../../assets/icons/add.svg" alt="add">
+        </button>
+      </div>
+    </div>
+  </form>
+
+</main>
+
+<ngx-spinner  [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>

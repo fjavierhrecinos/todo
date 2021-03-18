@@ -1,1 +1,330 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("./assets/fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("./assets/fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("./assets/fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, hr, menu, nav, section {
+  display: block;
+}
+
+a, hr {
+  padding: 0;
+}
+
+abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0;
+}
+
+ins, mark {
+  background-color: #ff9;
+  color: #000;
+}
+
+body {
+  line-height: 1;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:after, blockquote:before, q:after, q:before {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0;
+}
+
+ins {
+  text-decoration: none;
+}
+
+mark {
+  font-style: italic;
+  font-weight: 700;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+.font--rb {
+  font-family: "Roboto-Bold";
+}
+
+.font--rl {
+  font-family: "Roboto-Light";
+}
+
+.font--rm {
+  font-family: "Roboto-Medium";
+}
+
+.font--rr {
+  font-family: "Roboto-Regular";
+}
+
+.size--12 {
+  font-size: 12px;
+}
+
+.size--14 {
+  font-size: 14px;
+}
+
+.size--16 {
+  font-size: 16px;
+}
+
+.size--18 {
+  font-size: 18px;
+}
+
+.size--22 {
+  font-size: 22px;
+}
+
+.size--24 {
+  font-size: 24px;
+}
+
+.size--40 {
+  font-size: 40px;
+}
+
+.size--45 {
+  font-size: 45px;
+}
+
+.color--white {
+  color: var(--white);
+}
+
+.color--blue {
+  color: var(--blue);
+}
+
+
+.color--gray {
+  color: var(--gray);
+}
+
+.color--dark-gray {
+  color: var(--dark-gray);
+}
+
+.color--brown {
+  color: var(--brown);
+}
+
+.btn {
+  font-size: 16px;
+  font-family: "Roboto-Regular";
+  text-transform: uppercase;
+  color: var(--blue);
+  padding: 0.25rem;
+  border: 0px;
+  background-color: transparent;
+  transition: all 250ms linear;
+  cursor: pointer;
+}
+
+.btn.btn-default {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray);
+  margin-bottom: 1rem;
+}
+
+.btn.btn-default:hover {
+  background-color: var(--gray);
+}
+
+.icon {
+  display: inline-block;
+}
+
+.icon.icon--small {
+  width: 16px;
+}
+
+.icon.icon--medium {
+  width: 24px;
+}
+
+.icon.icon--large {
+  width: 32px;
+}
+
+@keyframes toggle {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 30px;
+  }
+}
+
+form .filters {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+}
+
+form .field-control {
+  position: relative;
+}
+
+form .field-control.field-control--icon img {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+form .field-control.field-control--icon input[type="text"] {
+  padding: 0.75em 1em 0.75em 3em;
+}
+
+form .field-control.field-control--inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+form .field-control.field-control--inline.field-right {
+  justify-content: flex-end;
+}
+
+form label {
+  padding-right: 1rem;
+}
+
+form label,
+form input {
+  font-size: 14px;
+  font-family: "Roboto-Regular";
+  color: var(--blue);
+}
+
+form input[type="text"] {
+  border: 1px solid var(--gray);
+  padding: 0.75em 1em;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form input[type="text"]::placeholder {
+  color: var(--blue);
+  opacity: 1;
+}
+
+form input[type="text"]:-ms-input-placeholder {
+  color: var(--blue);
+}
+
+form input[type="text"]::-ms-input-placeholder {
+  color: var(--blue);
+}
+
+form .toggle {
+  width: 64px;
+  position: relative;
+  height: 34px;
+  background-color: var(--gray);
+  border-radius: 20px;
+}
+
+form .toggle .toggle--btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gray);
+  background-color: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+}
+
+form .toggle.active .toggle--btn {
+  animation: toggle 250ms linear forwards;
+}
+:root {
+  --white: #ffffff;
+  --blue: #497892;
+  --gray: #EDF2F4;
+  --brown: #716D66;
+  --dark-gray: 	#4b4c4c;
+}
+
+body {
+  font-family: "Roboto-Regular";
+}
+
+h1, h2, h3 {
+  margin-bottom: 1.5rem;
+}
+
+h4, h5, h6 {
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+.display-block {
+  display: block;
+  width: 100%;
+}
