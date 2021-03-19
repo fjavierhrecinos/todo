@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <form>
+  <form >
     <div class="filters">
       <div class="filter">
         <div class="field-control field-control--inline">
@@ -25,7 +25,7 @@
       <div class="filter">
         <div class="field-control field-control--icon field-control--inline">
           <img class="icon icon--medium" src="../../../assets/icons/search.svg" alt="search">
-          <input type="text" placeholder="Filter" (keydown)="search($event)">
+          <input type="text" id="searchFilter" placeholder="Filter" (input)="search($event.target.value)">
         </div>
       </div>
     </div>
@@ -58,11 +58,11 @@
     <div class="add-item">
       <div class="add-item--description">
         <div class="field-control">
-          <input class="display-block" type="text" placeholder="New item named">
+          <input class="display-block" type="text" placeholder="New item named" [(ngModel)]="newItem"  #new="ngModel" [ngModelOptions]="{standalone:true}">
         </div>
       </div>
       <div class="add-item-action">
-        <button type="button" class="btn">
+        <button type="button" class="btn" (click)="addNewItem()">
           <img class="icon icon--medium" src="../../../assets/icons/add.svg" alt="add">
         </button>
       </div>
