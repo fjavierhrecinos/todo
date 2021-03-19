@@ -39,7 +39,7 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  filterByType(type) {
+  filterByType(type): void {
     switch (type) {
       case 'completed':
         this.data = this.copyData.filter(todo => todo.completed === true);
@@ -74,7 +74,7 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  addNewItem() {
+  addNewItem(): void {
     let newTodo: Todos;
     if (this.newItem !== '') {
       let maxId = Math.max(...this.data.map(element => element.id));
